@@ -1,6 +1,7 @@
 # Code301d98 Lab 6-10
 
 **Author**: Ike Steoger
+
 **Version**: 1.0.0 - repo, file creation, readme updates, etc.
 
 ## Overview
@@ -19,6 +20,8 @@
 
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
+
+## Feature Completion Estimations
 
 >Name of feature: ________________________________
 >
