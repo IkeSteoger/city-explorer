@@ -26,6 +26,7 @@ Kyle W. [https://github.com/K1ng-T0ast]
 
 ## Wireframes
 
+![Lab07 Wireframe](/public/lab07wireframe.jpg)
 ![Lab06 Wireframe](/public/lab06wireframe.jpg)
 
 ## Feature Completion Estimations

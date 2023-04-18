@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Weather from './weather'
 
 class Main extends React.Component {
     
@@ -19,6 +20,8 @@ class Main extends React.Component {
             lon: '',
             error: false,
             errorMsg: '',
+            weatherData: '',
+            showWeather: '',
         }
     }
     
@@ -46,15 +49,35 @@ class Main extends React.Component {
                 error: false,
                 showMap: true,
             })
+            this.handleWeather(event);
         } catch(error){
             this.setState({
                 error: true,
                 errorMsg: error.message,
                 showMap: false,
+                showWeather: false,
             })
         }
 
         
+    }
+
+    handleWeather = async (event) => {
+        event.preventDefault();
+        try {
+            let url = `${process.env.REACT_APP_SERVER}/weather?searchQuery=${this.state.city}`;
+
+            let weatherData = await axios.get(url);
+            console.log(weatherData.data);
+
+            this.setState({
+                weatherData: weatherData.data,
+                showWeather: true,
+            })
+            
+        } catch (error) {
+            console.log(error.message);
+        }
     }
 
     render() {
@@ -93,6 +116,11 @@ class Main extends React.Component {
                             this.state.error
                             ? <p>{this.state.errorMsg}</p>
                             : <p>{this.state.cityData.display_name}</p>
+                        }
+                        {
+                            this.state.showWeather
+                            ? <Weather weather={this.state.weatherData} />
+                            : <p></p>
                         }
                 </Container>
             </>
