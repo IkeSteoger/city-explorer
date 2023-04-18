@@ -2,26 +2,31 @@
 
 **Author**: Ike Steoger
 
-**Version**: 1.0.0 - repo, file creation, readme updates, etc.
+**Version**: 1.1.0 - completion of basic API calls with display for user
+1.0.0 - repo, file creation, readme updates, etc.
 
 ## Overview
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
+
+This application is used to test and learn about APIs. Completed for Code301d98.
 
 ## Getting Started
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
 
 ## Architecture
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+
+This project requires React and React-Bootstrap.
 
 ## Change Log
-<!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
 
-01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
+4/17/2023 - Application now has working API calls to LocationIQ and displays Latitude & Longitude as well as a map preview for user.
 
 ## Credit and Collaborations
 
 Kaeden O. [https://github.com/KaedenOC]
 Kyle W. [https://github.com/K1ng-T0ast]
+
+## Wireframes
+
+![Lab06 Wireframe](/public/lab06wireframe.jpg)
 
 ## Feature Completion Estimations
 
@@ -41,10 +46,16 @@ Kyle W. [https://github.com/K1ng-T0ast]
 >
 >Start time: 4pm
 >
->Finish time: _____
+>Finish time: 5:30pm
 >
->Actual time needed to complete: _____
+>Actual time needed to complete: 1.5 hours
 
-## Lab Wireframes
-
-![Lab06 Wireframe](/public/lab06wireframe.jpg)
+>Name of feature: Errors
+>
+>Estimate of time needed to complete: 2 hours
+>
+>Start time: 5:30pm
+>
+>Finish time: 6:30pm
+>
+>Actual time needed to complete: 1 hour
