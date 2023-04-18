@@ -68,7 +68,7 @@ class Main extends React.Component {
             let url = `${process.env.REACT_APP_SERVER}/weather?searchQuery=${this.state.city}`;
 
             let weatherData = await axios.get(url);
-            console.log(weatherData.data);
+            console.log(weatherData.data[0], weatherData.data[1]);
 
             this.setState({
                 weatherData: weatherData.data[0],
