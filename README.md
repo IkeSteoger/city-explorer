@@ -19,16 +19,32 @@
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
 
 ## Credit and Collaborations
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
+
+Kaeden O. [https://github.com/KaedenOC]
+Kyle W. [https://github.com/K1ng-T0ast]
 
 ## Feature Completion Estimations
 
->Name of feature: ________________________________
+>Name of feature: Locations - Lat & Lon
 >
->Estimate of time needed to complete: _____
+>Estimate of time needed to complete: 2 hours
 >
->Start time: _____
+>Start time: 1:30pm
+>
+>Finish time: 4pm
+>
+>Actual time needed to complete: 2.5 hours
+
+>Name of feature: Map
+>
+>Estimate of time needed to complete: 2 hours
+>
+>Start time: 4pm
 >
 >Finish time: _____
 >
 >Actual time needed to complete: _____
+
+## Lab Wireframes
+
+![Lab06 Wireframe](/public/lab06wireframe.jpg)
