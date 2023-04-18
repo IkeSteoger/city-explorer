@@ -21,7 +21,8 @@ class Main extends React.Component {
             error: false,
             errorMsg: '',
             weatherData: '',
-            showWeather: '',
+            showWeather: false,
+            dateData: '',
         }
     }
     
