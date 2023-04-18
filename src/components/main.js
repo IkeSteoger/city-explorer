@@ -71,7 +71,8 @@ class Main extends React.Component {
             console.log(weatherData.data);
 
             this.setState({
-                weatherData: weatherData.data,
+                weatherData: weatherData.data[0],
+                dateData: weatherData.data[1],
                 showWeather: true,
             })
             
@@ -119,8 +120,8 @@ class Main extends React.Component {
                         }
                         {
                             this.state.showWeather
-                            ? <Weather weather={this.state.weatherData} />
-                            : <p></p>
+                            ? <Weather weather={this.state.weatherData} date={this.state.dateData} />
+                            : <></>
                         }
                 </Container>
             </>
