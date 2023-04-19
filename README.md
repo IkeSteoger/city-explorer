@@ -2,7 +2,8 @@
 
 **Author**: Ike Steoger
 
-**Version**: 1.1.0 - completion of basic API calls with display for user
+**Version**: 1.2.0 - attached backend server to frontend display & worked in a placeholder for weather
+1.1.0 - completion of basic API calls with display for user
 1.0.0 - repo, file creation, readme updates, etc.
 
 ## Overview
@@ -26,7 +27,7 @@ Kyle W. [https://github.com/K1ng-T0ast]
 
 ## Wireframes
 
-![Lab07 Wireframe](/public/lab07wireframe.jpg)
+![Lab07 Wireframe](/public/lab06wireframe.jpg)
 ![Lab06 Wireframe](/public/lab06wireframe.jpg)
 
 ## Feature Completion Estimations
