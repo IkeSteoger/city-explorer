@@ -50,7 +50,7 @@ class Main extends React.Component {
                 error: false,
                 showMap: true,
             })
-            this.handleWeather(event);
+            this.handleWeather(cityData.data[0].lat, cityData.data[0].lon);
         } catch(error){
             this.setState({
                 error: true,
@@ -63,8 +63,8 @@ class Main extends React.Component {
         
     }
 
-    handleWeather = async (event) => {
-        event.preventDefault();
+    handleWeather = async (lat, lon) => {
+        // event.preventDefault();
         try {
             let url = `${process.env.REACT_APP_SERVER}/weather?searchQuery=${this.state.city}`;
 
@@ -76,10 +76,10 @@ class Main extends React.Component {
                 showWeather: true,
             })
             
-        } catch (error) {
-            console.log(error.message);
-            
+        } catch (error) {        
             this.setState({
+                error: true,
+                errorMsg: "No weather info available for that city (yet)",
                 showWeather: false,
             })
         }

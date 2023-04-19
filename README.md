@@ -2,7 +2,7 @@
 
 **Author**: Ike Steoger
 
-**Version**: 1.2.0 - attached backend server to frontend display & worked in a placeholder for weather
+**Version**: 1.2.0 - attached backend server to frontend display & worked in a t cheplaceholder for weather
 1.1.0 - completion of basic API calls with display for user
 1.0.0 - repo, file creation, readme updates, etc.
 
