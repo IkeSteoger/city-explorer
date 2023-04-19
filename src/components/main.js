@@ -69,7 +69,6 @@ class Main extends React.Component {
             let url = `${process.env.REACT_APP_SERVER}/weather?searchQuery=${this.state.city}`;
 
             let weatherData = await axios.get(url);
-            console.log(weatherData.data.description, weatherData.data.valid_date);
 
             this.setState({
                 weatherData: weatherData.data.description,
@@ -79,6 +78,10 @@ class Main extends React.Component {
             
         } catch (error) {
             console.log(error.message);
+            
+            this.setState({
+                showWeather: false,
+            })
         }
     }
 
