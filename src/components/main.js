@@ -119,12 +119,11 @@ class Main extends React.Component {
                             ? <p>{this.state.errorMsg}</p>
                             : <p>{this.state.cityData.display_name}</p>
                         }
-                        {/* {
+                        {
                             this.state.showWeather
-                            ? <Weather weather={this.state.weatherData} date={this.state.dateData} />
+                            ? <Weather weatherData={this.state.weatherData} dateData={this.state.dateData} />
                             : <></>
-                        } */}
-                        <Weather weather={this.state.weatherData} date={this.state.dateData} />
+                        }
                 </Container>
             </>
         )
