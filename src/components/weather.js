@@ -11,7 +11,7 @@ class Weather extends React.Component {
                 {this.props.weatherData.map((obj) => 
                 <Accordion.Item eventKey="">
                     <Accordion.Body>
-                        The forecast will be {obj.description} on {obj.date}.
+                        The forecast will be {obj.description} on {obj.valid_date}.
                     </Accordion.Body>
                 </Accordion.Item>
                         )}
