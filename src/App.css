@@ -1,4 +1,4 @@
-* {
+body {
   color: white;
   text-align: center;
 }
@@ -20,6 +20,7 @@ body {
 
 input[type="text"], textarea {
   background-color: #7A577A;
+  color: white;
 }
 
 input[type="text"]:focus {
@@ -34,12 +35,31 @@ footer{
   text-align: right;
 }
 
+.accordion{
+  margin: 10px;
+}
+.accordion-item:not(.collapsed) {
+  border: hidden !important;
+  border-color: #FFF !important;
+  box-shadow: 0px !important;
+}
+
 .accordion-body {
   background-color: #7A6D31;
+  color: white;
 }
 
 .accordion-button {
   background-color: #7A577A !important;
+  border-radius: 25px;
+  border: 2px solid #1E232E;
+  padding: 20px;
+}
+
+.accordion-button:hover {
+  border-radius: 25px;
+  border: 2px solid white;
+  padding: 20px;
 }
 
 .accordion-button:focus {
@@ -57,9 +77,13 @@ footer{
 }
 
 .carousel{
-  color: black;
+  color: white!important;
 }
 
 .carousel-caption{
-  color: black;
+  color: white !important;
+  position: static;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
 }
