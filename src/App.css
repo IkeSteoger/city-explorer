@@ -33,3 +33,33 @@ img{
 footer{
   text-align: right;
 }
+
+.accordion-body {
+  background-color: #7A6D31;
+}
+
+.accordion-button {
+  background-color: #7A577A !important;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+.accordion-button {
+  color: white;
+  display: block;
+  text-align: center;
+}
+
+.accordion-button:not(.collapsed) {
+  color: white;
+}
+
+.carousel{
+  color: black;
+}
+
+.carousel-caption{
+  color: black;
+}
