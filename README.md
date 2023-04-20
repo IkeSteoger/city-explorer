@@ -14,7 +14,7 @@ This application is used to test and learn about APIs. Completed for Code301d98.
 
 ## Architecture
 
-This project requires React and React-Bootstrap.
+This project requires `React` and `React-Bootstrap`. Also use of `Axios`.
 
 ## Change Log
 
@@ -23,11 +23,13 @@ This project requires React and React-Bootstrap.
 ## Credit and Collaborations
 
 Kaeden O. [https://github.com/KaedenOC]
+
 Kyle W. [https://github.com/K1ng-T0ast]
 
 ## Wireframes
 
-![Lab07 Wireframe](/public/lab06wireframe.jpg)
+![Lab08 Wireframe](/public/lab08wireframe.jpg)
+![Lab07 Wireframe](/public/lab07wireframe.jpg)
 ![Lab06 Wireframe](/public/lab06wireframe.jpg)
 
 ## Feature Completion Estimations
