@@ -1,12 +1,10 @@
 import React from 'react';
 import axios from 'axios';
-import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container'
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Weather from './weather';
 import Movies from './movies';
+import Results from './results'
+import Form from './form'
 
 class Main extends React.Component {
     
@@ -70,7 +68,6 @@ class Main extends React.Component {
     }
 
     handleWeather = async (lat, lon) => {
-        // event.preventDefault();
         try {
             let url = `${process.env.REACT_APP_SERVER}/weather?searchQuery=${this.state.city}&lat=${lat}&lon=${lon}`;
 
@@ -85,20 +82,18 @@ class Main extends React.Component {
         } catch (error) {        
             this.setState({
                 error: true,
-                errorMsg: "No weather info available for that city!",
+                errorMsg: `Weather error occured: ${error.response.status}, ${error.response.data}`,
                 showWeather: false,
             })
         }
     }
 
     handleMovie = async (city) => {
-        // event.preventDefault();
         try {
             let url = `${process.env.REACT_APP_SERVER}/movie?city=${this.state.city}`;
 
 
             let movieData = await axios.get(url);
-            console.log(movieData.data)
             this.setState({
                 movieData: movieData.data,
                 showMovie: true,
@@ -107,7 +102,7 @@ class Main extends React.Component {
         } catch (error) {        
             this.setState({
                 error: true,
-                errorMsg: "No movies available for that city!",
+                errorMsg: `Movie error occured: ${error.response.status}, ${error.response.data}`,
                 showMovie: false,
             })
         }
@@ -117,32 +112,18 @@ class Main extends React.Component {
         return (
             <>
                 <Container fluid>
-                    <Row>
-                        <Col className="text-center">
-                            <form className="form" onSubmit={this.submitCityData} >
-                                <label> Enter a city name:
-                                    <input type="text" onInput={this.handleCitySubmit} />
-                                </label>
-                                <button className="button" type="submit">Explore!</button>
-                            </form>
-                        </Col>
-                    </Row>
+                    <Form 
+                        onSubmit={this.submitCityData}
+                        onInput={this.handleCitySubmit}
+                    />
                         {
                             this.state.showMap
-                            ? <Card className="text-center card">
-                                <Card.Body>
-                                    <Card.Title>{this.state.display_name}</Card.Title>
-                                <Row>
-                                    <Col>
-                                        <Card.Text>Latitude: {this.state.lat}</Card.Text>
-                                    </Col>
-                                    <Col>
-                                        <Card.Text>Longitude: {this.state.lon}</Card.Text>
-                                    </Col>
-                                </Row>
-                                    <Card.Text><img src={this.state.map} alt="" /></Card.Text>
-                                </Card.Body>
-                            </Card>
+                            ? <Results 
+                                display_name={this.state.display_name}
+                                lat={this.state.lat}
+                                lon={this.state.lon}
+                                map={this.state.map}
+                            />
                             : <p className="text-center">Choose a city! (And double check the spelling is correct!)</p>
                         }
                         {
