@@ -5,7 +5,8 @@ import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Weather from './weather'
+import Weather from './weather';
+import Movies from './movies';
 
 class Main extends React.Component {
     
@@ -22,7 +23,8 @@ class Main extends React.Component {
             errorMsg: '',
             weatherData: '',
             showWeather: false,
-            dateData: '',
+            movieData: '',
+            showMovie: false,
         }
     }
     
@@ -50,13 +52,17 @@ class Main extends React.Component {
                 error: false,
                 showMap: true,
             })
+
             this.handleWeather(cityData.data[0].lat, cityData.data[0].lon);
+            this.handleMovie(this.state.city)
+
         } catch(error){
             this.setState({
                 error: true,
                 errorMsg: error.message,
                 showMap: false,
                 showWeather: false,
+                showMovie: false,
             })
         }
 
@@ -66,21 +72,43 @@ class Main extends React.Component {
     handleWeather = async (lat, lon) => {
         // event.preventDefault();
         try {
-            let url = `${process.env.REACT_APP_SERVER}/weather?searchQuery=${this.state.city}`;
+            let url = `${process.env.REACT_APP_SERVER}/weather?searchQuery=${this.state.city}&lat=${lat}&lon=${lon}`;
+
 
             let weatherData = await axios.get(url);
 
             this.setState({
-                weatherData: weatherData.data.description,
-                dateData: weatherData.data.valid_date,
+                weatherData: weatherData.data,
                 showWeather: true,
             })
-            
+
         } catch (error) {        
             this.setState({
                 error: true,
-                errorMsg: "No weather info available for that city (yet)",
+                errorMsg: "No weather info available for that city!",
                 showWeather: false,
+            })
+        }
+    }
+
+    handleMovie = async (city) => {
+        // event.preventDefault();
+        try {
+            let url = `${process.env.REACT_APP_SERVER}/movie?city=${this.state.city}`;
+
+
+            let movieData = await axios.get(url);
+            console.log(movieData.data)
+            this.setState({
+                movieData: movieData.data,
+                showMovie: true,
+            })
+
+        } catch (error) {        
+            this.setState({
+                error: true,
+                errorMsg: "No movies available for that city!",
+                showMovie: false,
             })
         }
     }
@@ -124,7 +152,12 @@ class Main extends React.Component {
                         }
                         {
                             this.state.showWeather
-                            ? <Weather weatherData={this.state.weatherData} dateData={this.state.dateData} />
+                            ? <Weather weatherData={this.state.weatherData} />
+                            : <></>
+                        }
+                                                {
+                            this.state.showMovie
+                            ? <Movies movieData={this.state.movieData}/>
                             : <></>
                         }
                 </Container>

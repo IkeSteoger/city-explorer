@@ -1,14 +1,21 @@
 import React from 'react';
-// import Card from 'react-bootstrap/Card';
+import Accordion from 'react-bootstrap/Accordion';
 
 
 
 class Weather extends React.Component {
     render() {
         return (
-            <>
-                <p>On {this.props.dateData} it will be {this.props.weatherData}.</p>
-            </>
+            <Accordion>
+                <Accordion.Header>Click Here For Upcoming Weather!</Accordion.Header>
+                {this.props.weatherData.map((obj) => 
+                <Accordion.Item eventKey="">
+                    <Accordion.Body>
+                        The forecast will be {obj.description} on {obj.date}.
+                    </Accordion.Body>
+                </Accordion.Item>
+                        )}
+            </Accordion>
         )
     }
 }
